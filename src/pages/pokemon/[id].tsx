@@ -1,5 +1,5 @@
 import { api } from '@/services/api'
-import { getColors } from '@/utils/colorsType'
+import { getColors, PokeTypes } from '@/utils/colorsType'
 import {
   AboutPokemon,
   ContainerPokemon,
@@ -25,6 +25,7 @@ import {
 import Image from 'next/image'
 import { getTypes } from '@/utils/badgesType'
 import { getStats } from '@/utils/statsType'
+import { PokemonType, PokemonTypes } from '@/interface/pokemonTypes'
 
 export const getStaticPaths = async () => {
   const maxPokemons = 151
@@ -59,10 +60,10 @@ export const getStaticProps = async (context: { params: { id: any } }) => {
   }
 }
 
-export default function Pokemon({ pokemon }) {
+export default function Pokemon({ pokemon }: PokemonTypes | any) {
   return (
     <ContainerPokemon
-      color={pokemon.types?.map(type => {
+      color={pokemon.types?.map((type: PokemonType) => {
         if (type.slot === 1) {
           return getColors(type.type.name)
         }
@@ -95,7 +96,7 @@ export default function Pokemon({ pokemon }) {
 
               <div className="badge">
                 <span>Tipos:</span>
-                {pokemon.types.map(type => (
+                {pokemon.types.map((type: PokemonType) => (
                   <Image
                     key={type.id}
                     src={getTypes(type.type.name)}
@@ -114,13 +115,13 @@ export default function Pokemon({ pokemon }) {
               </div>
               <div>
                 <span>Formas:</span>
-                {pokemon.forms.map(form => (
+                {pokemon.forms.map((form: PokemonTypes) => (
                   <p>{form.name}</p>
                 ))}
               </div>
               <div className="ability1">
                 <span>Habilidades:</span>
-                {pokemon?.abilities.map(ability => (
+                {pokemon?.abilities.map((ability: PokemonTypes) => (
                   <p className="ability" key={ability.ability.name}>
                     {ability.ability.name}
                   </p>
@@ -134,7 +135,7 @@ export default function Pokemon({ pokemon }) {
                 <span>
                   <BsPeaceFill />
                 </span>
-                {pokemon.forms.map(form => (
+                {pokemon.forms.map((form: PokemonTypes) => (
                   <p>{form.name}</p>
                 ))}
               </Box>
@@ -150,7 +151,7 @@ export default function Pokemon({ pokemon }) {
                 <span>
                   <BsFillDiagram3Fill />
                 </span>
-                {pokemon.types.map(type => (
+                {pokemon.types.map((type: PokemonType) => (
                   <p>{type.type.name}</p>
                 ))}
               </Box>
@@ -161,7 +162,7 @@ export default function Pokemon({ pokemon }) {
         <StatsPokemon>
           <h2>Atributos</h2>
           <div className="stats">
-            {pokemon.stats?.map(stat => (
+            {pokemon.stats?.map((stat: PokemonType) => (
               <div className="stat">
                 <h4>{stat.stat.name}</h4>
                 <Image

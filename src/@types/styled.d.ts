@@ -2,9 +2,8 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    title: string;
     backgrounds: {
-    light: string;
+      light: string;
       black: string;
       white: string;
       gray: string;

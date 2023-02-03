@@ -1,13 +1,14 @@
+import { PokemonType, PokemonTypes } from '@/interface/pokemonTypes'
 import {  useEffect, useState } from 'react'
 import axios from 'axios'
 import Link from 'next/link'
+import Image from 'next/image'
 import { getColors } from '../../utils/colorsType'
 import { getTypes } from '@/utils/badgesType'
 import { BadgeContainer, Container, ImageContainer, Pokeball } from './styles'
-import Image from 'next/image'
 
-export function Card({ url } ) {
-  const [pokemon, setPokemon] = useState()
+export function Card({ url }: PokemonTypes | any ) {
+  const [pokemon, setPokemon] = useState<PokemonTypes>()
 
   useEffect(() => {
     axios.get(url).then(response => setPokemon(response.data))
@@ -18,7 +19,7 @@ export function Card({ url } ) {
       {pokemon && (
         <Link href={`/pokemon/${pokemon.id}`}>
           <Container
-            color={pokemon?.types?.map(type => {
+            color={pokemon?.types?.map((type: PokemonTypes | any) => {
               if (type.slot === 1) {
                 return getColors(type.type.name)
               }
@@ -35,8 +36,8 @@ export function Card({ url } ) {
             />
             
             <BadgeContainer>
-              {pokemon.types.map(type => (
-                <Image key={type} src={getTypes(type.type.name)} alt={type.type.name} />
+              {pokemon.types.map((type: PokemonType | any ) => (
+                <Image key={type.type.name} src={getTypes(type.type.name)} alt={type.type.name} />
               ))}
             </BadgeContainer>
           </Container>

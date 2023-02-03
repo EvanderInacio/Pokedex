@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ColorProps {
+  color: any;
+}
+
+export const Container = styled.div<ColorProps>`
   width: 20rem;
   height: 13rem;
   position: relative;
