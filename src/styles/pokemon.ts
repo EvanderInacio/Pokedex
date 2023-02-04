@@ -1,6 +1,15 @@
 import styled from "styled-components"
 
 export const ContainerPokemon = styled.div`
+  .back {
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
   background: ${({ color }) => color};
   width: 100%;
   height: 100%;
@@ -17,7 +26,7 @@ export const HeaderPokemon = styled.header`
   justify-content: space-evenly;
   align-items: center;
   z-index: 1;
-
+  padding-top: 2rem;
 
   .name {
     span {
@@ -34,6 +43,7 @@ export const HeaderPokemon = styled.header`
   } 
 
   .image {
+    position: relative;
     img {
       width: 16rem;
     }
@@ -96,11 +106,31 @@ export const ContentPokemon = styled.div`
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
     color: ${({ theme }) => theme.backgrounds.purple};
+
+    img {
+        width: 4rem;
+      }
   }
+
+  @media (max-width: 400px ) {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 568px ) {
+    h2 {
+      img {
+        width: 8rem;
+      }
+    }
+  }
+
+
 `
 
 export const AboutPokemon = styled.div`
@@ -266,6 +296,7 @@ export const Box = styled.div`
 export const StatsPokemon = styled.div`
   border-radius: 15px;
   background: ${({ theme }) => theme.backgrounds.light};
+  margin-bottom: 5rem;
 
   h2 {
     text-align: center;

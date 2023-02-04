@@ -3,7 +3,10 @@ import { PokemonType, PokemonTypes } from '@/interface/pokemonTypes'
 import { getColors } from '@/utils/colorsType'
 import { getStats } from '@/utils/statsType'
 import { getTypes } from '@/utils/badgesType'
+import { Card } from '@/components/Card'
 import Image from 'next/image'
+import Head from 'next/head'
+import Link from 'next/link'
 import {
   AboutPokemon,
   ContainerPokemon,
@@ -15,6 +18,8 @@ import {
 } from '@/styles/pokemon'
 import { BsPeaceFill, BsFillDiagram3Fill } from 'react-icons/bs'
 import { GiRank3 } from 'react-icons/gi'
+import { MdOutlineArrowBackIosNew } from 'react-icons/md'
+import { ImagesDetail } from '@/components/ImagesDetail'
 
 export const getStaticPaths = async () => {
   const maxPokemons = 151
@@ -51,8 +56,14 @@ export const getStaticProps = async (context: { params: { id: any } }) => {
 
 export default function Pokemon({ pokemon }: PokemonTypes | any) {
   console.log(pokemon)
-  
+
   return (
+    <>
+    <Head>
+      <link rel="icon" href={pokemon.sprites.other['dream_world'].front_default}/>
+      <title>{pokemon.name} | Pokédex</title>
+    </Head>
+    
     <ContainerPokemon
       color={pokemon.types?.map((type: PokemonType) => {
         if (type.slot === 1) {
@@ -60,16 +71,18 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
         }
       })}
     >
+      <Link href={'/'}>
+        <MdOutlineArrowBackIosNew className='back'/> 
+      </Link> 
       <HeaderPokemon>
         <div className="name">
-          <span>#{pokemon.id}</span>
-          <h1>{pokemon.name}</h1>
+          <span>#{pokemon.id} </span>
+          <h1>{pokemon.name} </h1>
         </div>
 
         <div className="image">
-          {/* <Pokeball /> */}
           <img
-            src={`https://raw.githubusercontent.com/PokeAPI//sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
+            src={pokemon.sprites.other['dream_world'].front_default}
             alt={pokemon.name}
           />
         </div>
@@ -77,16 +90,18 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
 
       <ContentPokemon>
         <AboutPokemon>
-          <h2>About</h2>
+          <h2>
+            About <img src={pokemon.sprites.versions['generation-v']['black-white'].animated.front_default} alt="" />
+          </h2>
 
           <AboutContent>
             <div className="content">
               <div>
-                <span>Nome:</span> <p>{pokemon.name}</p>
+                <span>Name:</span> <p>{pokemon.name}</p>
               </div>
 
               <div className="badge">
-                <span>Tipos:</span>
+                <span>Types:</span>
                 {pokemon.types.map((type: PokemonType) => (
                   <Image
                     key={type.id}
@@ -97,21 +112,21 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
               </div>
 
               <div>
-                <span>Altura:</span>
+                <span>Height:</span>
                 <p>{pokemon.height * 10} cm</p>
               </div>
               <div>
-                <span>Peso:</span>
+                <span>Weight:</span>
                 <p>{pokemon.weight / 10} kg</p>
               </div>
               <div>
-                <span>Formas:</span>
+                <span>Forms:</span>
                 {pokemon.forms.map((form: PokemonTypes) => (
                   <p>{form.name}</p>
                 ))}
               </div>
               <div className='ability-content'>
-                <span>Habilidades:</span>
+                <span>Ability:</span>
                 <div className="ability1">
                   {pokemon?.abilities.map((ability: PokemonTypes) => (
                     <p className="ability" key={ability.ability.name}>
@@ -124,7 +139,7 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
 
             <div className="box">
               <Box>
-                <h4>Especie:</h4>
+                <h4>Form</h4>
                 <span>
                   <BsPeaceFill />
                 </span>
@@ -133,14 +148,14 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
                 ))}
               </Box>
               <Box>
-                <h4>Experiencia:</h4>
+                <h4>Experience</h4>
                 <span>
                   <GiRank3 />
                 </span>
-                <p>{pokemon.base_experience}</p>
+                <p>{pokemon.base_experience} </p> 
               </Box>
               <Box>
-                <h4>Tipo: </h4>{' '}
+                <h4>Type</h4>{' '}
                 <span>
                   <BsFillDiagram3Fill />
                 </span>
@@ -153,7 +168,10 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
         </AboutPokemon>
 
         <StatsPokemon>
-          <h2>Atributos</h2>
+          <h2>
+            Stats <img src={pokemon.sprites.versions['generation-v']['black-white'].animated.front_shiny} alt="" />
+          </h2>
+
           <div className="stats">
             {pokemon.stats?.map((stat: PokemonType) => (
               <div className="stat">
@@ -169,7 +187,12 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
             ))}
           </div>
         </StatsPokemon>
+
+        <div>
+          <ImagesDetail pokemon={pokemon}/>
+        </div>
       </ContentPokemon>
     </ContainerPokemon>
+    </>
   )
 }
