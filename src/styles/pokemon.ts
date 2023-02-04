@@ -1,6 +1,4 @@
-import { Key } from "react";
-import styled from "styled-components";
-import theme from "./theme/default";
+import styled from "styled-components"
 
 export const ContainerPokemon = styled.div`
   background: ${({ color }) => color};
@@ -83,7 +81,8 @@ export const ContentPokemon = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
-  background: ${({ theme }) => theme.backgrounds.white};
+  background: ${({ theme }) => theme.backgrounds.light};
+  backdrop-filter: blur(5px);
   padding: 3rem 5rem;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -100,6 +99,7 @@ export const ContentPokemon = styled.div`
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
+    color: ${({ theme }) => theme.backgrounds.purple};
   }
 `
 
@@ -109,7 +109,7 @@ export const AboutPokemon = styled.div`
     text-transform: capitalize;
   }
 
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 `
 export const AboutContent = styled.div`
   display: grid;
@@ -131,20 +131,43 @@ export const AboutContent = styled.div`
     }
 
     span {
-      font-weight: 300;
+      font-weight: 400;
+      text-transform: capitalize;
+      color: ${({theme}) => theme.colors.dark};
     }
 
     p{
       font-size: 1.6rem;
-      font-weight: 500;
+      font-weight: 600;
+      text-transform: capitalize;
     }
 
-    .ability {
-      margin-left: 5px;
-      border: 2px solid ${({theme}) => theme.colors.dark};
-      padding: 0.2rem;
-      border-radius: 5px;
+
+    .ability-content {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 1rem;
+
+      .ability1 {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+
+        .ability {
+          background-color: ${({theme}) => theme.backgrounds.blue};
+          color: ${({theme}) => theme.backgrounds.white};
+          padding: 0.4rem;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+        }
+      }
     }
+
+    
+    
 
     .badge {
       display: flex;
@@ -162,13 +185,6 @@ export const AboutContent = styled.div`
         font-size: 1.2rem;
         font-weight: 500;
       }
-
-      .ability1 {
-        display: flex;
-        flex-direction: column;
-        border-radius: 5px;
-        gap: 0.5rem;
-      }
     }
 
     @media (max-width: 768px) {
@@ -182,11 +198,19 @@ export const AboutContent = styled.div`
         font-size: 1.4rem;
         font-weight: 500;
       }
+      
+      .ability-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
 
-      .ability {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        .ability1 {
+          border-radius: 8px;
+          justify-content: start;
+          align-items: flex-start;
+        }
       }
+
     }
   }
 
@@ -221,17 +245,17 @@ export const Box = styled.div`
   h4 {
     color: ${({theme}) => theme.backgrounds.black};
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 1rem;
   }
 
   span {
     color: ${({theme}) => theme.backgrounds.purple};
-    font-size: 2.5rem;
+    font-size: 2.6rem;
   }
 
   p {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.4rem;
     color: ${({theme}) => theme.backgrounds.black};
   }
@@ -241,26 +265,35 @@ export const Box = styled.div`
 
 export const StatsPokemon = styled.div`
   border-radius: 15px;
-  background: ${({ theme }) => theme.backgrounds.white};
+  background: ${({ theme }) => theme.backgrounds.light};
 
   h2 {
     text-align: center;
   }
-  
-  p {
-    font-size: 1.5rem;
-  } 
 
   .stats {
     display: flex;
     gap: 3rem;
+    margin-top: 2rem;
 
     .stat {
       display: flex;
-      gap: 1rem;
+      gap: 1.1rem;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      h4{
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 1.7rem;
+      }
+    
+      p {
+        font-size: 1.5rem;
+        font-weight: 500;
+      } 
+
     }
 
     @media (max-width: 568px) {

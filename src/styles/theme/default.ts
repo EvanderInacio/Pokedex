@@ -1,11 +1,13 @@
 const theme = {
   backgrounds: {
-    light: '#F1F1F1',
+    light: '#F2F3F5',
     black: '#000000',
     white: '#FFFFFF',
     gray: '#CCCCCC',
-    purple: '#6C79DB',
+    purple: '#7038f8',
+    blue: "#457af7",
     grayLight: '#EEEEEE',
+    
   },
   colors: {
     white: '#FFFFFF',

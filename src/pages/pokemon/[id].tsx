@@ -1,5 +1,9 @@
 import { api } from '@/services/api'
-import { getColors, PokeTypes } from '@/utils/colorsType'
+import { PokemonType, PokemonTypes } from '@/interface/pokemonTypes'
+import { getColors } from '@/utils/colorsType'
+import { getStats } from '@/utils/statsType'
+import { getTypes } from '@/utils/badgesType'
+import Image from 'next/image'
 import {
   AboutPokemon,
   ContainerPokemon,
@@ -9,23 +13,8 @@ import {
   AboutContent,
   Box
 } from '@/styles/pokemon'
-
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
-import { BsPeaceFill, BsFillDiagram3Fill, BsFillStarFill } from 'react-icons/bs'
-import {
-  GiRank3,
-  GiHeartPlus,
-  GiCheckedShield,
-  GiBroadsword,
-  GiCrossedSwords,
-  GiEdgedShield,
-  GiRunningNinja,
-  GiMineExplosion
-} from 'react-icons/gi'
-import Image from 'next/image'
-import { getTypes } from '@/utils/badgesType'
-import { getStats } from '@/utils/statsType'
-import { PokemonType, PokemonTypes } from '@/interface/pokemonTypes'
+import { BsPeaceFill, BsFillDiagram3Fill } from 'react-icons/bs'
+import { GiRank3 } from 'react-icons/gi'
 
 export const getStaticPaths = async () => {
   const maxPokemons = 151
@@ -61,6 +50,8 @@ export const getStaticProps = async (context: { params: { id: any } }) => {
 }
 
 export default function Pokemon({ pokemon }: PokemonTypes | any) {
+  console.log(pokemon)
+  
   return (
     <ContainerPokemon
       color={pokemon.types?.map((type: PokemonType) => {
@@ -119,13 +110,15 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
                   <p>{form.name}</p>
                 ))}
               </div>
-              <div className="ability1">
+              <div className='ability-content'>
                 <span>Habilidades:</span>
-                {pokemon?.abilities.map((ability: PokemonTypes) => (
-                  <p className="ability" key={ability.ability.name}>
-                    {ability.ability.name}
-                  </p>
-                ))}
+                <div className="ability1">
+                  {pokemon?.abilities.map((ability: PokemonTypes) => (
+                    <p className="ability" key={ability.ability.name}>
+                      {ability.ability.name}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -171,7 +164,7 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
                   src={getStats(stat.stat.name)}
                   alt=""
                 />
-                <span>{stat.base_stat}</span>
+                <p>{stat.base_stat}</p>
               </div>
             ))}
           </div>
