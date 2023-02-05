@@ -29,7 +29,6 @@ export const ImagesContent = styled.div`
 
     img {
         width: 10rem;
-        background: ${({theme}) => theme.backgrounds.light};
 
         @media (max-width: 479px) {
           display: flex;

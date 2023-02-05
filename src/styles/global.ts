@@ -17,8 +17,8 @@ export default createGlobalStyle`
   body {
     width: 100%;
     height: 100vh;
-    color: ${({ theme }) => theme.colors.black};
-    background-color: ${({ theme }) => theme.backgrounds.white};
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.backgrounds.background};
   }
 
   a {
@@ -49,4 +49,16 @@ export default createGlobalStyle`
      grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  &::-webkit-scrollbar {
+      width: 1rem;               
+    }
+    &::-webkit-scrollbar-track {
+      background: ${({ theme }) => theme.backgrounds.background};     
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.backgrounds.blue};    
+      border-radius: .5rem;       
+      border: 0.25rem solid ${({ theme }) => theme.backgrounds.background};
+    }
 `;

@@ -7,6 +7,7 @@ const theme = {
     purple: '#7038f8',
     blue: "#457af7",
     grayLight: '#EEEEEE',
+    background: '#060B28'
     
   },
   colors: {

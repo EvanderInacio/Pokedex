@@ -14,12 +14,12 @@ import {
   HeaderPokemon,
   StatsPokemon,
   AboutContent,
-  Box
 } from '@/styles/pokemon'
 import { BsPeaceFill, BsFillDiagram3Fill } from 'react-icons/bs'
 import { GiRank3 } from 'react-icons/gi'
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 import { ImagesDetail } from '@/components/ImagesDetail'
+import { Box } from '@/components/Box'
 
 export const getStaticPaths = async () => {
   const maxPokemons = 151
@@ -137,33 +137,7 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
               </div>
             </div>
 
-            <div className="box">
-              <Box>
-                <h4>Form</h4>
-                <span>
-                  <BsPeaceFill />
-                </span>
-                {pokemon.forms.map((form: PokemonTypes) => (
-                  <p>{form.name}</p>
-                ))}
-              </Box>
-              <Box>
-                <h4>Experience</h4>
-                <span>
-                  <GiRank3 />
-                </span>
-                <p>{pokemon.base_experience} </p> 
-              </Box>
-              <Box>
-                <h4>Type</h4>{' '}
-                <span>
-                  <BsFillDiagram3Fill />
-                </span>
-                {pokemon.types.map((type: PokemonType) => (
-                  <p>{type.type.name}</p>
-                ))}
-              </Box>
-            </div>
+            <Box pokemon={pokemon} />
           </AboutContent>
         </AboutPokemon>
 

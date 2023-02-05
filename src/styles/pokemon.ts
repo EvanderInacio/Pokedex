@@ -91,7 +91,7 @@ export const ContentPokemon = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
-  background: ${({ theme }) => theme.backgrounds.light};
+  background: ${({ theme }) => theme.backgrounds.background};
   backdrop-filter: blur(5px);
   padding: 3rem 5rem;
   border-top-left-radius: 40px;
@@ -100,7 +100,6 @@ export const ContentPokemon = styled.div`
   span {
     font-size: 1.5rem;
     font-weight: 500;
-    
     padding-right: 0.5rem;
     text-transform: capitalize;
   }
@@ -163,7 +162,7 @@ export const AboutContent = styled.div`
     span {
       font-weight: 400;
       text-transform: capitalize;
-      color: ${({theme}) => theme.colors.dark};
+      color: ${({theme}) => theme.colors.light04};
     }
 
     p{
@@ -257,46 +256,13 @@ export const AboutContent = styled.div`
   
 `
 
-export const Box = styled.div`
-  border-radius: 8px;
-  width: 14rem;
-  height: 13rem;
-  background: ${({theme}) => theme.backgrounds.gray};
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-
-  @media (max-width: 1100px) {
-      width: 13rem;
-      height: 11rem;
-    }
-
-  h4 {
-    color: ${({theme}) => theme.backgrounds.black};
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-
-  span {
-    color: ${({theme}) => theme.backgrounds.purple};
-    font-size: 2.6rem;
-  }
-
-  p {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: ${({theme}) => theme.backgrounds.black};
-  }
-
-`
 
 
 export const StatsPokemon = styled.div`
   border-radius: 15px;
-  background: ${({ theme }) => theme.backgrounds.light};
+  background: ${({ theme }) => theme.backgrounds.black};
   margin-bottom: 5rem;
+  padding: 4rem;
 
   h2 {
     text-align: center;
@@ -346,16 +312,3 @@ export const StatsPokemon = styled.div`
   }
 
 `
-
-
-// export const Back = styled.div`
-// position: fixed;
-// right: 0;
-// opacity: 0.8;
-// z-index: 1;
-//  img {
-//   width: 20rem;
-//  }
-
-// `
-
