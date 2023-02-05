@@ -81,7 +81,7 @@ export const Pokeball = styled.div`
 
   &:before {
     content: '';
-    width: 180px;
+    width: 100px;
     border: 4em solid;
     position: relative;
     padding-bottom: 10em;

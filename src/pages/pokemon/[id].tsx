@@ -71,7 +71,7 @@ export default function Pokemon({ pokemon }: PokemonTypes | any) {
         }
       })}
     >
-      <Link href={'/'}>
+      <Link href={'/pokemons'}>
         <MdOutlineArrowBackIosNew className='back'/> 
       </Link> 
       <HeaderPokemon>

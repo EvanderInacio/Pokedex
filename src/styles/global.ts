@@ -32,6 +32,8 @@ export default createGlobalStyle`
     letter-spacing: 1px;
   }
 
+
+
   .container {
     margin: 3rem;
     padding: 2rem;
