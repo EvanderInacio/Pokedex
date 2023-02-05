@@ -1,4 +1,5 @@
 import { Card } from '@/components/Card'
+import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { PokemonTypes } from '@/interface/pokemonTypes'
 import { api } from '@/services/api'
@@ -21,11 +22,12 @@ export default function Home() {
     <div>
       <Header />
       <div className="container">
-      {pokemons &&
-        pokemons.map((pokemon: PokemonTypes) => (
-          <Card key={pokemon.id} url={pokemon.url} />
+        {pokemons &&
+          pokemons.map((pokemon: PokemonTypes) => (
+            <Card key={pokemon.id} url={pokemon.url} />
         ))}
-    </div>
+      </div>
+      <Footer />      
     </div>
   )
 }

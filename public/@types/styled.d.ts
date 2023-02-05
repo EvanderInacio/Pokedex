@@ -9,6 +9,7 @@ declare module 'styled-components' {
       gray: string;
       purple: string;
       blue: string;
+      blueSecond: string;
       grayLight: string;
       background: string;
     };
@@ -19,6 +20,7 @@ declare module 'styled-components' {
       gray: string;
       light02: string;
       light04: string;
+      light08: string;
     };
   }
 }

@@ -28,16 +28,17 @@ export const Container = styled.div<ColorProps>`
 
   p {
     font-size: 2rem;
-    font-weight: 500;
-    line-height: 1rem;
     font-family: 'Roboto';
-    color: ${({ theme }) => theme.colors.light04};
+    font-weight: 300;
+    line-height: 1rem;
+    color: ${({ theme }) => theme.colors.light08};
   }
 
   &:hover {
     .img-container {
       top: -20%;
     }
+
     box-shadow: 0 1rem 3rem 0 ${({ color }) => color};
   }
 

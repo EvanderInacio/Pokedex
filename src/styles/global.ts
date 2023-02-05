@@ -2,11 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 
 export default createGlobalStyle`
-  *, *::after, *::before {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   button {
@@ -34,6 +34,7 @@ export default createGlobalStyle`
 
   .container {
     margin: 3rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,6 +48,14 @@ export default createGlobalStyle`
     
     @media (min-width: 1250px) {
      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1750px) {
+     grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 2200px) {
+     grid-template-columns: repeat(5, 1fr);
     }
   }
 

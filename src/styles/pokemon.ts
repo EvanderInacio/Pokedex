@@ -31,7 +31,7 @@ export const HeaderPokemon = styled.header`
   .name {
     span {
       font-size: 3rem;
-      color: ${({ theme }) => theme.colors.light04};
+      color: ${({ theme }) => theme.colors.light08};
     }
 
     h1 {
