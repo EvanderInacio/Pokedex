@@ -3,7 +3,6 @@ import { PokemonType, PokemonTypes } from '@/interface/pokemonTypes'
 import { getColors } from '@/utils/colorsType'
 import { getStats } from '@/utils/statsType'
 import { getTypes } from '@/utils/badgesType'
-import { Card } from '@/components/Card'
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -15,8 +14,6 @@ import {
   StatsPokemon,
   AboutContent,
 } from '@/styles/pokemon'
-import { BsPeaceFill, BsFillDiagram3Fill } from 'react-icons/bs'
-import { GiRank3 } from 'react-icons/gi'
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 import { ImagesDetail } from '@/components/ImagesDetail'
 import { Box } from '@/components/Box'

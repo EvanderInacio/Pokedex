@@ -61,7 +61,7 @@ export default createGlobalStyle`
     }
   }
 
-  &::-webkit-scrollbar {
+    &::-webkit-scrollbar {
       width: 1rem;               
     }
     &::-webkit-scrollbar-track {

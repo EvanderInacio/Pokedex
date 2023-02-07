@@ -1,5 +1,6 @@
-import { PokemonType, PokemonTypes } from '@/interface/pokemonTypes'
 import {  useEffect, useState } from 'react'
+import { PokemonType, PokemonTypes } from '@/interface/pokemonTypes'
+import InfiniteScroll from "react-infinite-scroll-component";
 import axios from 'axios'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -7,7 +8,12 @@ import { getColors } from '../../utils/colorsType'
 import { getTypes } from '@/utils/badgesType'
 import { BadgeContainer, Container, ImageContainer, Pokeball } from './styles'
 
+export function getPokemon(pokemon: PokemonTypes | undefined) {
+  return axios.get(`/pokemon/${pokemon}`);
+}
+
 export function Card({ url }: PokemonTypes | any ) {
+ 
   const [pokemon, setPokemon] = useState<PokemonTypes>()
 
   useEffect(() => {
@@ -42,7 +48,7 @@ export function Card({ url }: PokemonTypes | any ) {
             </BadgeContainer>
           </Container>
         </Link>
-      )}
+      )} 
     </>
   )
 }

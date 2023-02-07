@@ -36,18 +36,14 @@ export const HeaderContainer = styled.header`
     }
 
     button {
-      height: 90%;
-      padding: 0.855rem 1rem;
+      width: 3.2rem;
+      height: 2.938rem;
       background: ${({theme}) => theme.backgrounds.blue};
       color: ${({theme}) => theme.backgrounds.white};
       font-family: 'Roboto';
       font-weight: bold;
       font-size: 1rem;
       border-radius: 0 15px 15px 0;
-
-      @media (min-width: 568px) {
-        height: 80%;
-      }
 
       &:hover {
         background: ${({theme}) => theme.backgrounds.blueSecond};

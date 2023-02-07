@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PokemonsContainer = styled.div`
+export const HomeContainer = styled.div`
   padding: 3rem;
   width: 100%;
   height: 100%;
@@ -13,7 +13,7 @@ export const PokemonsContainer = styled.div`
 
 `
 
-export const PokemonsContent = styled.div`
+export const HomeContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@ export const PokemonsContent = styled.div`
   }
 `
 
-export const Pokeballs = styled.div`
+export const Explorer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,7 +85,6 @@ export const Pokeballs = styled.div`
   }
   
   .button {
-    
     padding: 1rem 2rem;
     border-radius: 10px;
     background: ${({theme}) => theme.backgrounds.blue};
@@ -97,3 +96,28 @@ export const Pokeballs = styled.div`
 
 `
 
+export const Loading = styled.div`
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+   .button {
+    padding: 1rem 2rem;
+    
+    background: ${({theme}) => theme.backgrounds.blue};
+
+    &:hover {
+     background: ${({theme}) => theme.backgrounds.blueSecond};
+    }
+
+    p {
+      color: ${({theme}) => theme.colors.white};
+    }
+  }
+
+`
+
+export const PokemonsContainer = styled.div`
+  padding-bottom: 7rem;
+`
