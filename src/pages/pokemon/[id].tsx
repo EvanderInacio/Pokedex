@@ -52,8 +52,6 @@ export const getStaticProps = async (context: { params: { id: any } }) => {
 }
 
 export default function Pokemon({ pokemon }: PokemonTypes | any) {
-  console.log(pokemon)
-
   return (
     <>
     <Head>
