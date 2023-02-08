@@ -1,38 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  Pokedex  <img width="22px" src="https://raw.githubusercontent.com/EvanderInacio/Pokedex/66c857c0fed355c19946747a5ed94c704984d398/public/pokeball.svg"/>
+</h1>
 
-## Getting Started
+ <p align="center">
+  <img alt="Github Top Language" src="https://img.shields.io/github/languages/top/EvanderInacio/Pokedex?color=060B28">
+  <img alt="Github Language Count" src="https://img.shields.io/github/languages/count/EvanderInacio/Pokedex?color=060B28">
+  <img alt="Repository Size" src="https://img.shields.io/github/repo-size/EvanderInacio/Pokedex?color=060B28">
+</p>
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+![Resultado final do projeto](https://raw.githubusercontent.com/EvanderInacio/Pokedex/main/public/preview.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📝 Descrição 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+O projeto consiste em uma plataforma web que tem como funcionalidade listar todos os Pokémons e exibir seus atributos. Todos os dados sobre os pokémons foram obtidos através da PokéApi.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Website: [pokedex-evander.vercel.app](https://pokedex-evander.vercel.app/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Tecnologias
 
-## Learn More
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-To learn more about Next.js, take a look at the following resources:
+- NextJS
+- TypeScript
+- Styled Components
+- Axios
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📚 Bibliotecas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Poke Api](https://pokeapi.co/)
+- [Google Fonts](https://fonts.google.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Carousel](https://www.npmjs.com/package/react-responsive-carousel)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔗 Links
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="left">
+
+ <a href="https://www.linkedin.com/in/evander-inacio" alt="Linkedin">
+  <img src="https://img.shields.io/badge/-Linkedin-000?style=for-the-badge&logo=Linkedin&logoColor=0A66C2&link=https://www.linkedin.com/in/evander-inacio"/> 
+ </a>
+  
+ <a href="https://www.facebook.com/evandder.lopes" alt="Facebook">
+  <img src="https://img.shields.io/badge/-Facebook-000?style=for-the-badge&logo=Facebook&logoColor=000dff&link=https://www.facebook.com/evandder.lopes"/> 
+ </a>
+  
+ <a href="https://twitter.com/Evander_Inacio" alt="Twitter">
+  <img src="https://img.shields.io/badge/-Twitter-000?style=for-the-badge&logo=Twitter&logoColor=1DA1F2&link=https://twitter.com/Evander_Inacio"/> 
+ </a>
+
+ <a href="https://evander.vercel.app" alt="Portfolio">
+  <img src="https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=FFF&link=https://www.evanderinacio.com/"/>
+ </a>
+
+ </p>
+ 
+## 💻 Autor<br>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/EvanderInacio">
+        <img src="https://avatars.githubusercontent.com/u/72362299?s=96&v=4" width="100px;" /><br>
+        <sub>
+          <b>Evander Inácio</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+-----
+
+  <h3 align="center"> Developed by <a href="https://www.linkedin.com/in/evander-inacio/">Evander Inácio</a> ☕</h3>
