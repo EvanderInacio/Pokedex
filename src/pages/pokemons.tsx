@@ -9,7 +9,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 
 export default function Pokemons() {
-  const [pokemons, setPokemons] = useState<any>([])
+  const [pokemons, setPokemons] = useState<PokemonTypes | any>([])
   const [next, setNext] = useState<number>(50)
   const [loading, setLoading] = useState(true)
 

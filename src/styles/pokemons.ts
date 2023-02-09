@@ -4,11 +4,17 @@ export const HomeContainer = styled.div`
   padding: 3rem;
   width: 100%;
   height: 100%;
+
   header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 3rem;
     align-items: center;
+
+    .links {
+      display: flex;
+      gap: 0.8rem;
+    }
   }
 
 `
